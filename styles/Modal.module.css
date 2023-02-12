@@ -38,7 +38,7 @@
     padding: 10px;
     color: #2c3e50;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
   }
   
@@ -150,6 +150,19 @@
   @media screen and (max-width: 800px) {
     .modal {
         width: 100vw;
-        height: 60vh;
+        height: 90vh;
+    }
+    .modalContent {
+      margin-top:40%;
+    }
+    .modalHeader {
+      padding-top:25px;
+    }
+    .heading {
+      padding: 0;
+    }
+    .closeBtn {
+      font-size:28px;
+      margin-left: 10px;
     }
   }

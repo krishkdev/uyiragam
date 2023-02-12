@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const Modal = ({ setIsOpen }) => {
   const form = useRef();
   const router = useRouter();
-  const { totalPrice, cartItems } = useStateContext();
+  const { totalPrice, cartItems, setShowCart } = useStateContext();
 
   const [fullname, setFullname] = useState("");
   const [contact, setContact] = useState("");
@@ -78,6 +78,8 @@ const Modal = ({ setIsOpen }) => {
       setFullname("");
       setContact("");
       setAddress("");
+      setIsOpen(false);
+      setShowCart(false);
       router.push("/success");
     }
     console.log(fullname, contact, address, cartItems);
