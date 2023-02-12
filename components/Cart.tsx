@@ -7,7 +7,6 @@ import {
   AiOutlineShopping,
   AiOutlineDelete,
 } from "react-icons/ai";
-import toast from "react-hot-toast";
 import styles from "../styles/Cart.module.css";
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
