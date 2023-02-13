@@ -3,10 +3,26 @@ import { Inter } from "@next/font/google";
 import { client } from "../lib/client";
 import Product from "../components/Product";
 import { ProductType } from "@/models/Product";
+import Select, { ActionMeta, SingleValue } from "react-select";
 
 interface HomeProps {
   products: ProductType[];
 }
+
+interface Option {
+  value: string;
+  label: string;
+}
+
+const categories = [
+  { value: "all", label: "All" },
+  { value: "Rices", label: "Rices" },
+  { value: "Sugar", label: "Sugar" },
+  { value: "Oil", label: "Oil" },
+  { value: "Pulses", label: "Pulses" },
+  { value: "Salt", label: "Salt" },
+  { value: "Nuts", label: "Nuts" },
+];
 
 export default function Home({ products }: HomeProps): JSX.Element {
   const [category, setCategory] = useState("all");
@@ -26,9 +42,10 @@ export default function Home({ products }: HomeProps): JSX.Element {
     setNewProducts(filteredProducts);
   }, [category, products]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
-    setCategory(e.target.value);
-    if (e.target.value === "") {
+  const handleChange = (option: SingleValue<Option> , actionMeta: ActionMeta<Option>): void => {
+    setCategory(option!.value);
+    //alert(JSON.stringify(e));
+    if (option?.value === "") {
       setCategory("all");
     }
   };
@@ -37,19 +54,18 @@ export default function Home({ products }: HomeProps): JSX.Element {
       {/* code starts here */}
       <section className="product">
         <div className="flex">
-          <div className="product_section_title"> {/* !!!Slug marquee also uses this */}
+          <div className="product_section_title">
+            {" "}
+            {/* !!!Slug marquee also uses this */}
             Our Products <hr />
           </div>
-          <div className="product_section_category">
-            <select id="category" value={category} onChange={handleChange}>
-              <option value="">All</option>
-              <option value="Rices">Rices</option>
-              <option value="Sugar">Sugar</option>
-              <option value="Oil">Oil</option>
-              <option value="Pulses">Pulses</option>
-              <option value="Salt">Salt</option>
-              <option value="Nuts">Nuts</option>
-            </select>
+          <div className="product_section_category select-wrapper">
+            <Select
+              options={categories}
+              id="category"
+              className="category"
+              onChange={handleChange}
+            />
           </div>
         </div>
         <div className="grid">
