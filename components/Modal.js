@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
-//import emailjs from "@emailjs/browser";delete this package
 import { toast } from "react-hot-toast";
 import { useStateContext } from "@/context/StateContext";
 import { useRouter } from "next/router";
