@@ -8,9 +8,14 @@ import React from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useStateContext } from "@/context/StateContext";
 
-const Product = ({ _id, image, name, slug, price, details }: ProductType) => {
-  const { qty,onAdd } = useStateContext();
+const Product = (props: ProductType) => {
+  const { _id, image, name, slug, price, details } = props;
+  const { qty,onAdd, setShowCart } = useStateContext();
   const src = urlFor(image[0]).url();
+  const handleBuyNow = () => {
+    onAdd({...props}, qty);
+    setShowCart(true);
+  }
   const Truncate = (string: string, number: number) => {
     if (!string) {
       return null;
@@ -34,7 +39,7 @@ const Product = ({ _id, image, name, slug, price, details }: ProductType) => {
         </div>
         <div className={styles.card_body}>
           <h5 className={styles.card_title} title={name}>
-            {Truncate(name, 55)}
+            {Truncate(name, 25)}
           </h5>
           <p className={styles.card_description}>{Truncate(details, 65)}</p>
           <p className={styles.card_price}>
@@ -48,11 +53,11 @@ const Product = ({ _id, image, name, slug, price, details }: ProductType) => {
           <button
             type="button"
             className={styles.add_to_cart}
-            onClick={() => onAdd({ _id, image, name, details, price }, qty)}
+            onClick={() => onAdd({...props}, qty)}
           >
             Add to Cart
           </button>
-          <button type="button" className={styles.buy_now}>
+          <button type="button" className={styles.buy_now} onClick={handleBuyNow}>
             Buy Now
           </button>
         </div>

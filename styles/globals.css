@@ -1,6 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"); */
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -11,8 +9,8 @@
 html,
 body,
 main {
-  font-family: "Lato", sans-serif;
-  font-family: "Old Standard TT", serif;
+  font-family: "Old Standard TT", sans-serif;
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   max-width: 100vw;
   max-height: 100vh;
   background-color: #eee;
@@ -32,9 +30,9 @@ a {
 .grid {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -52,6 +50,26 @@ a {
   width: 30%;
   margin: 8px 0;
 }
+.product_section_category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#category {
+  padding: 10px 15px;
+  border-radius: 5px;
+  height: 40%;
+}
+
+#category > option {
+  padding: 10px 15px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  color: #324d67;
+}
 
 @media (max-width: 600px) {
   .grid {
@@ -65,4 +83,7 @@ a {
 }
 
 @media screen and (max-width: 800px) {
+  .flex {
+    display: block;
+  }
 }

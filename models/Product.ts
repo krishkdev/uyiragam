@@ -5,6 +5,7 @@ export interface ProductType {
   slug: Slug;
   price: number;
   details: string;
+  catogory: string; //spelled wrong in sanity fix it!
 }
 
 export interface Slug {

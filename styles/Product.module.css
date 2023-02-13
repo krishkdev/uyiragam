@@ -1,13 +1,14 @@
 .card {
   background-color: #fff;
   width: 100%;
-  max-width: 260px;
+  max-width: 23%;
+  max-height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  margin-bottom: 15px;
+  margin: 10px;
   box-shadow: 0px 0px 5px 2px rgba(204, 204, 204, 1);
   transition: box-shadow, transform 0.5s ease;
   border-radius: 15px;
@@ -31,7 +32,7 @@
 }
 .card_description{
   text-align: center;
-  margin: 15px 0;
+  margin: 12px 0;
   font-size: 14px;
 }
 .card_price{
@@ -65,7 +66,7 @@
 .buttons .add_to_cart {
   padding: 5px 10px;
   border: 1px solid #f02d34;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 14px;
   font-weight: 500;
   background-color: white;
@@ -83,7 +84,7 @@
   background-color: #f02d34;
   color: white;
   border: none;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -97,14 +98,16 @@
 
 @media (max-width: 600px) {
   .card {
-    min-width: 80%;
+    min-width: 90%;
     margin-bottom: 10px;
   }
   .buttons {
     display: flex;
-    flex-direction: column;
   }
-  .buttons .buy_now {
-    margin-top: 5px;
+}
+@media (max-width: 1090px) {
+  .card {
+    max-width: 40%;
+    margin-bottom: 10px;
   }
 }
