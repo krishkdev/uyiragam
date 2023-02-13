@@ -37,7 +37,7 @@ export default function Home({ products }: HomeProps): JSX.Element {
       {/* code starts here */}
       <section className="product">
         <div className="flex">
-          <div className="product_section_title">
+          <div className="product_section_title"> {/* !!!Slug marquee also uses this */}
             Our Products <hr />
           </div>
           <div className="product_section_category">

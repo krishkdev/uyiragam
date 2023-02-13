@@ -15,6 +15,7 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import { useStateContext } from "@/context/StateContext";
+import Product from "@/components/Product";
 
 interface IParams extends ParsedUrlQuery {
   slug: string
@@ -22,7 +23,7 @@ interface IParams extends ParsedUrlQuery {
 
 interface ProductTypes {
   product: ProductType;
-  products: ProductType;
+  products: ProductType[];
 }
 
 const ProductDetails = ({ product, products }: ProductTypes) => {
@@ -53,14 +54,14 @@ const ProductDetails = ({ product, products }: ProductTypes) => {
         <div className={styles.product_detail_desc}>
           <h1>{name}</h1>
           <div className={styles.reviews}>
-            <div>
+            {/* <div>
               <AiFillStar />
               <AiFillStar />
               <AiFillStar />
               <AiFillStar />
               <AiOutlineStar />
             </div>
-            <p>(20)</p>
+            <p>(20)</p> */}
           </div>
           <h4>Details: </h4>
           <p>{details}</p>
@@ -83,6 +84,16 @@ const ProductDetails = ({ product, products }: ProductTypes) => {
           </div>
 
         </div>
+      </div>
+      <div className={styles.maylike_products_wrapper}>
+          <h2>You may also like</h2><div className = "line"></div>
+          <div className={styles.marquee}>
+            <div className={`${styles.maylike_products_container} ${styles.track}`}>
+              {products?.map((item) => (
+                <Product key={item._id} {...item} />
+              ))}
+            </div>
+          </div>
       </div>
     </div>
   );

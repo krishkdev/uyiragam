@@ -28,9 +28,11 @@
 
 .product_detail_desc h4 {
   margin-top: 10px;
+  font-size: 20px;
 }
 .product_detail_desc p {
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 18px;
 }
 .reviews p {
   color: #324d67;
@@ -125,6 +127,50 @@
 }
 
 
+
+.maylike_products_wrapper{
+  margin-top: 120px;
+}
+.maylike_products_wrapper h2{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 50px;
+  color: #324d67;
+
+  font-size: 28px;
+}
+.maylike_products_container{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.marquee {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+  width: 180%;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
 @media screen and (max-width:800px) {
     .product_detail_container{
       flex-wrap: wrap;
@@ -141,6 +187,10 @@
     }
     .product_detail_container{
       margin: 20px;
+    }
+    .track {
+      animation: marquee 12s linear infinite;
+      width: 130%;
     }
   }
   

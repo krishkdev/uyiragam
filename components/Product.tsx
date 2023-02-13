@@ -11,7 +11,7 @@ import { useStateContext } from "@/context/StateContext";
 const Product = (props: ProductType) => {
   const { _id, image, name, slug, price, details } = props;
   const { qty,onAdd, setShowCart } = useStateContext();
-  const src = urlFor(image[0]).url();
+  const src = urlFor(image && image[0]).url();
   const handleBuyNow = () => {
     onAdd({...props}, qty);
     setShowCart(true);

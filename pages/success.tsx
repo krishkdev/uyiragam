@@ -21,10 +21,10 @@ const Success = () => {
           <BsBagCheckFill />
         </p>
         <h2>Thank you for your order!</h2>
-        <p className={styles.email_msg}>Check your email inbox for the receipt.</p>
+        <p className={styles.email_msg}>Check your email inbox for the receipt.(Check spam if not in inbox)</p>
         <p className={styles.description}>
           If you have any questions, please email
-          <a className={styles.email} href="krishkumarv2001@gmail.com">
+          <a className={styles.email} href="Uyiragam@gmail.com">
           krishkumarv2001@gmail.com
           </a>
         </p>

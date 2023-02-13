@@ -16,8 +16,8 @@
   }
   
   .modal {
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     background: rgb(247, 247, 247);
     color: white;
     z-index: 10;
@@ -26,7 +26,7 @@
   }
   
   .modalHeader {
-    height: 50px;
+    height: 65px;
     background: rgb(247, 247, 247);
     overflow: hidden;
     border-top-left-radius: 16px;
@@ -34,11 +34,19 @@
   }
   
   .heading {
-    margin: 0;
-    padding: 10px;
+    margin-top: 10px;
     color: #2c3e50;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing:0.2em;
+    font-weight: bold;
+    text-align: center;
+  }
+  .subheading {
+    color: #2c3e50;
+    font-weight: 400;
+    font-size: 16px;
     text-align: center;
   }
   
@@ -46,7 +54,11 @@
     padding: 10px;
     font-size: 14px;
     color: #2c3e50;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    flex-wrap: wrap;
   }
   
   .modalActions {
@@ -127,6 +139,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   .modalForm input {
     width: 100%;
@@ -148,20 +161,26 @@
 
 
   @media screen and (max-width: 800px) {
+    .darkBG {
+      background:rgba(0, 0, 0, 0.61);
+    }
     .modal {
         width: 100vw;
-        height: 90vh;
+        height: 100%;
     }
     .modalContent {
-      margin-top:40%;
+      margin-top:10px;
     }
     .modalHeader {
-      padding-top:25px;
+      padding-top:12px;
     }
     .heading {
       padding: 0;
+      font-size:20px;
+      margin: 0;
     }
     .closeBtn {
+      display: none;
       font-size:28px;
       margin-left: 10px;
     }

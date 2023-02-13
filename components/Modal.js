@@ -14,6 +14,9 @@ const Modal = ({ setIsOpen }) => {
   const [contact, setContact] = useState("");
   const [address, setAddress] = useState("");
 
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  // const [showFailureMessage, setShowFailureMessage] = useState(false);
+
   const [errors, setErrors] = useState({});
   const [buttonText, setButtonText] = useState("Send");
 
@@ -91,6 +94,7 @@ const Modal = ({ setIsOpen }) => {
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
             <h2 className={styles.heading}>Checkout details</h2>
+            <h5 className={styles.subheading}>We need some basic details about you 🙂</h5>
           </div>
           <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
@@ -112,15 +116,21 @@ const Modal = ({ setIsOpen }) => {
                   setFullname(e.target.value);
                 }}
               />
+              {errors?.fullname && (
+                <p className="text-red-500">Fullname cannot be empty.</p>
+              )}
               <input
                 id="email"
-                type="text"
+                type="email"
                 value={contact}
                 placeholder="Email or Phone"
                 onChange={(e) => {
                   setContact(e.target.value);
                 }}
               />
+              {errors?.contact && (
+                <p className="text-red-500">Email cannot be empty.</p>
+              )}
               <textarea
                 id="address"
                 value={address}
@@ -129,6 +139,9 @@ const Modal = ({ setIsOpen }) => {
                   setAddress(e.target.value);
                 }}
               ></textarea>
+              {errors?.email && (
+            <p className="text-red-500">Address cannot be empty.</p>
+          )}
               <input
                 type="submit"
                 value={buttonText}
