@@ -17,7 +17,7 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
     await sendgrid.send({
       personalizations: [
         {
-          to: "saithamagoku4@gmail.com", // Your email where you'll receive emails
+          to: "uyiragamorganics@gmail.com", // Your email where you'll receive emails
           subject: `Hurray🎉 You've got order from ${req.body.fullname} for ₹ ${req.body.totalPrice}`,
         },
         {
@@ -25,7 +25,7 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse<Data>) {
           subject: `Hurray🎉 Your order is succesfully placed`,
         },
       ],
-      from: "saithamagoku4@gmail.com", // your website email address here
+      from: "uyiragamorganics@gmail.com", // your website email address here
       subject: `Hurray🎉 You've got order from ${req.body.fullname} for ₹ ${req.body.totalPrice}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
