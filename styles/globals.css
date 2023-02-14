@@ -56,14 +56,9 @@ a {
   justify-content: center;
 }
 #category {
-  padding: 10px 15px;
-  border-radius: 5px;
-  height: 40%;
+  width: 10vw;
 }
 
-#category > option {
-  padding: 10px 15px;
-}
 
 .flex {
   display: flex;
@@ -75,6 +70,13 @@ a {
   color:#f02d34;
   font-weight: 500;
   text-align: start;
+}
+
+.banner-image {
+  width: 60%;
+  height: 25%;
+  margin: 30px 0;
+  align-self: center;
 }
 
 .line {
@@ -102,5 +104,8 @@ a {
 @media screen and (max-width: 800px) {
   .flex {
     display: block;
+  }
+  #category {
+    width: 50vw;
   }
 }
