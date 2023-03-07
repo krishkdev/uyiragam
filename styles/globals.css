@@ -14,7 +14,7 @@ main {
   max-width: 100vw;
   min-height: 100vh;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   background-color: #eee;
 }
 
@@ -68,7 +68,7 @@ a {
 }
 
 .text-red-500 {
-  color:#f02d34;
+  color: #f02d34;
   font-weight: 500;
   text-align: start;
 }
@@ -111,7 +111,6 @@ a {
   }
 }
 
-
 /* REAL GLOBALS */
 .btn {
   margin-top: 10px;
@@ -129,7 +128,10 @@ a {
   background-color: #ff3e4e;
 }
 
-input[type=text], input[type=number], select {
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
   -webkit-appearance: none;
   width: 100%;
   margin: 10px 5px;
@@ -142,11 +144,11 @@ input[type=text], input[type=number], select {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -158,8 +160,8 @@ label {
 
 .formWrapper {
   display: grid;
-  gap: 1rem .5rem;
-  justify-content: flex-start;
+  gap: 1rem 0.5rem;
+  justify-content: center;
   grid-template-columns: auto minmax(auto, 400px);
 }
 .formModalContainer {
@@ -169,7 +171,7 @@ label {
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.31);
   padding: 2rem;
   margin: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-family: Arial;
 }
 

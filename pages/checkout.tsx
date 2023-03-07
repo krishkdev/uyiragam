@@ -1,4 +1,4 @@
-import FormModal from "@/components/forms/FormModal";
+import FormModal from "@/components/checkoutForm/FormModal";
 import React from "react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { useRouter } from "next/router";

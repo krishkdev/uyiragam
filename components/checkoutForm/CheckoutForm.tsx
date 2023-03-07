@@ -19,12 +19,29 @@ export function CheckoutForm({
   updateFields,
 }: AccountFormProps) {
   const { cartItems, totalPrice } = useStateContext();
-  
+
   return (
-    <div>
-      <h2 style={{ textAlign: "center", margin: 0, marginBottom: "2rem" }}>
+    <>
+      {/* <h2 style={{ textAlign: "center", margin: 0, marginBottom: "2rem" }}>
         Order Summary
-      </h2>
+      </h2> */}
+      <FormWrapper title="Order Summary">
+        <label>Email</label>
+        <input
+          autoFocus
+          required
+          type="email"
+          value={email}
+          onChange={(e) => updateFields({ email: e.target.value })}
+        />
+        {/* <label>Password</label>
+        <input
+          required
+          type="password"
+          value={password}
+          onChange={(e) => updateFields({ password: e.target.value })}
+        /> */}
+      </FormWrapper>
       <div>
         <div className={cartstyles.product_container}>
           {cartItems.length >= 1 &&
@@ -70,7 +87,8 @@ export function CheckoutForm({
             }}
           >
             <div>
-              <input type="radio" value="Male" name="gender" /> Cash On Delivery
+              <input autoFocus type="radio" value="Male" name="gender" /> Cash
+              On Delivery
             </div>
             <div>
               <input type="radio" value="Other" name="gender" disabled /> Pay
@@ -79,21 +97,6 @@ export function CheckoutForm({
           </div>
         </div>
       </div>
-      {/* <label>Email</label>
-      <input
-        autoFocus
-        required
-        type="email"
-        value={email}
-        onChange={e => updateFields({ email: e.target.value })}
-      />
-      <label>Password</label>
-      <input
-        required
-        type="password"
-        value={password}
-        onChange={e => updateFields({ password: e.target.value })}
-      /> */}
-    </div>
+    </>
   );
 }
