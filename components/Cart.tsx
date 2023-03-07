@@ -12,11 +12,11 @@ import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
 import { CartItem } from "@/models/CartItem";
 import Image from "next/image";
-import Modal from "../components/Modal";
+import { useRouter } from "next/router";
 
 export const Cart = () => {
+  const router = useRouter();
   const cartRef = useRef<HTMLElement>();
-  const [isOpen, setIsOpen] = useState(false);
   const {
     totalPrice,
     totalQuantities,
@@ -59,7 +59,7 @@ export const Cart = () => {
             </Link>
           </div>
         )}
-
+        {/* If items are present */}
         <div className={styles.product_container}>
           {cartItems.length >= 1 &&
             cartItems?.map((item: CartItem) => {
@@ -114,6 +114,7 @@ export const Cart = () => {
               );
             })}
         </div>
+        {/* Cart Bottom */}
         {cartItems.length >= 1 && (
           <div className={styles.cart_bottom}>
             <div className={styles.total}>
@@ -124,14 +125,16 @@ export const Cart = () => {
               <button
                 type="button"
                 className={styles.btn}
-                onClick={() => setIsOpen(true)}
+                onClick={() => {
+                  router.push("/checkout");
+                  setShowCart(false);
+                }}
               >
                 Checkout
               </button>
             </div>
           </div>
         )}
-        {isOpen && <Modal setIsOpen={setIsOpen} />}
       </div>
     </div>
   );

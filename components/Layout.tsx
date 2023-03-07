@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
-
+import { useRouter } from 'next/router';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -9,6 +9,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ children } : LayoutProps) => {
+  const router = useRouter();
+  const showNav = router.pathname === "/checkout" ? false : true;
   return (
     <div className="layout">
       <Head>
@@ -18,7 +20,7 @@ const Layout = ({ children } : LayoutProps) => {
         <link rel="icon" href="/icoua.jpg" />
       </Head>
       <header>
-        <Navbar />
+        {showNav && <Navbar />}
       </header>
       <main className="main-container">
         {children}
