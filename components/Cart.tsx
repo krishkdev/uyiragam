@@ -12,13 +12,11 @@ import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
 import { CartItem } from "@/models/CartItem";
 import Image from "next/image";
-import Modal from "../components/Modal";
 import { useRouter } from "next/router";
 
 export const Cart = () => {
   const router = useRouter();
   const cartRef = useRef<HTMLElement>();
-  // const [isOpen, setIsOpen] = useState(false);
   const {
     totalPrice,
     totalQuantities,
