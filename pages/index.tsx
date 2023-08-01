@@ -4,6 +4,7 @@ import { client } from "../lib/client";
 import Product from "../components/Product";
 import { ProductType } from "@/models/Product";
 import Select, { ActionMeta, SingleValue } from "react-select";
+import CarouselComponent from "../components/CarouselComponent";
 
 interface HomeProps {
   products: ProductType[];
@@ -42,7 +43,10 @@ export default function Home({ products }: HomeProps): JSX.Element {
     setNewProducts(filteredProducts);
   }, [category, products]);
 
-  const handleChange = (option: SingleValue<Option> , actionMeta: ActionMeta<Option>): void => {
+  const handleChange = (
+    option: SingleValue<Option>,
+    actionMeta: ActionMeta<Option>
+  ): void => {
     setCategory(option!.value);
     //alert(JSON.stringify(e));
     if (option?.value === "") {
@@ -51,6 +55,7 @@ export default function Home({ products }: HomeProps): JSX.Element {
   };
   return (
     <div className="root_container">
+      <CarouselComponent />
       {/* code starts here */}
       <section className="product">
         <div className="flex">

@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Bitter
+Author: Huerta Tipográfica
+Url: https://fonts.google.com/specimen/Bitter
+
+Font: Mr Dafoe
+Author: Sudtipos
+Url: https://fonts.google.com/specimen/Mr+Dafoe
