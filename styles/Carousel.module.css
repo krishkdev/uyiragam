@@ -1,0 +1,21 @@
+/* Update the styles for the carousel wrapper */
+.carousel_wrapper {
+  width: 100%;
+}
+
+.carousel_main {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.bannerimage {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+@media all and (max-width: 700px) {
+  .carousel_main {
+    height: 200px;
+  }
+}
